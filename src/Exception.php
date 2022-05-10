@@ -8,10 +8,10 @@ class Exception extends PHPException
 {
     /**
      * @param string|null $message
-     * @param int|null $code
+     * @param int $code
      * @param mixed $previous
      */
-    public function __construct($message = null, $code = null, $previous = null)
+    public function __construct($message = null, $code = 0, $previous = null)
     {
         $message = (string) $message;
         $errors = function_exists('imap_errors') ? @imap_errors() : false;
